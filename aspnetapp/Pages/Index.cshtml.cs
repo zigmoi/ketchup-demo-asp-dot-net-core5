@@ -17,9 +17,11 @@ namespace aspnetapp.Pages
             _logger = logger;
         }
 
+        public string Message { get; set; }
         public void OnGet()
         {
-
+            Message = $"About page visited at {DateTime.UtcNow.ToLongTimeString()}";
+            _logger.LogInformation(Message);
         }
     }
 }
